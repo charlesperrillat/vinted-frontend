@@ -37,8 +37,9 @@ const Header = ({ token, handleToken, search, setSearch }) => {
             </Link>
           </div>
         )}
-
-        <button>Vends tes articles</button>
+        <Link to="/login">
+          <button className="selling-button">Vends tes articles</button>
+        </Link>
       </div>
     </header>
   );

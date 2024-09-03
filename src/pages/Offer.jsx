@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import profilePicture from "../assets/images/profile-picture.png";
 
 const Offer = () => {
   const [data, setData] = useState({});
@@ -13,7 +14,7 @@ const Offer = () => {
         const response = await axios.get(
           `https://lereacteur-vinted-api.herokuapp.com/v2/offers/${id}`
         );
-        console.log(response.data);
+        console.log("offer response.data ==>", response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -38,11 +39,11 @@ const Offer = () => {
         <div className="offer-info">
           <h2 className="offer-price">{data.product_price.toFixed(2)} €</h2>
           <div className="product-details">
-            {data.product_details.map((detail) => {
+            {data.product_details.map((detail, index) => {
               const keys = Object.keys(detail);
               const key = keys[0];
               return (
-                <div className="product-detail">
+                <div key={index} className="product-detail">
                   <span>{Object.keys(detail)}</span>
                   <span>{detail[key]}</span>
                 </div>
@@ -54,10 +55,14 @@ const Offer = () => {
             <h3>{data.product_name}</h3>
             <p>{data.product_description}</p>
             <div className="offer-owner">
-              <img
-                src={data.owner.account.avatar.secure_url}
-                alt="owner avatar"
-              />
+              {data.owner.account.avatar ? (
+                <img
+                  src={data.owner.account.avatar.secure_url}
+                  alt="owner avatar"
+                />
+              ) : (
+                <img src={profilePicture} alt="owner avatar" />
+              )}
               <span>{data.owner.account.username}</span>
             </div>
           </div>
