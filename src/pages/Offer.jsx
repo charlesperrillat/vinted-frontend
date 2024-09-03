@@ -31,7 +31,6 @@ const Offer = () => {
     <span>En cours de chargement...</span>
   ) : (
     <main className="main-offer">
-      {/* <Link to="/offers/:id">Offer</Link> */}
       <div className="offer-page">
         <div className="offer-picture">
           <img src={data.product_image.secure_url} alt={data.product_name} />

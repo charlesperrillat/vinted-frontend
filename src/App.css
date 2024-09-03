@@ -47,6 +47,21 @@ body {
   height: 30px;
 }
 
+.disconnection {
+  display: flex;
+  align-items: center;
+}
+
+.disconnection button {
+  font-size: 12px;
+  color: white;
+  background-color: #c2175b;
+  border: none;
+  border-radius: 5px;
+  width: 115px;
+  height: 30px;
+}
+
 .header-container > button {
   font-size: 12px;
   background-color: #017580;
@@ -55,12 +70,6 @@ body {
   border-radius: 5px;
   width: 115px;
   height: 30px;
-}
-
-Header > img {
-  width: 100%;
-  height: 455px;
-  object-fit: cover;
 }
 
 /* -------------HOME------------- */
@@ -72,6 +81,16 @@ Header > img {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.main-home > img {
+  width: 100%;
+  height: 455px;
+  object-fit: cover;
+}
+
+.main-home a {
+  text-decoration: none;
 }
 
 .item-for-sale {
@@ -116,6 +135,7 @@ Header > img {
 
 .item-details p {
   font-size: 14px;
+  color: black;
 }
 
 .item-details span {
@@ -240,7 +260,7 @@ Header > img {
   cursor: pointer;
 }
 
-.signup-container {
+.sign-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,16 +268,16 @@ Header > img {
   margin-top: 50px;
 }
 
-.signup-container h2 {
+.sign-container h2 {
   font-size: 24px;
   margin-bottom: 25px;
 }
 
-.signup-container form {
+.sign-container form {
   width: 275px;
 }
 
-.signup-container form > input {
+.sign-container form > input {
   width: 100%;
   border: none;
   border-bottom: 1px solid #fcced3;
@@ -266,7 +286,7 @@ Header > img {
   outline: none;
 }
 
-.signup-container input::placeholder {
+.sign-container input::placeholder {
   font-size: 16px;
   color: #d2d3d4;
 }
@@ -276,6 +296,7 @@ Header > img {
   justify-content: center;
   width: 100%;
   margin-top: 25px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
@@ -300,9 +321,9 @@ Header > img {
   line-height: 14px;
 }
 
-.signup-container button {
+.sign-container button {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   height: 45px;
   border-radius: 5px;
   color: white;
@@ -313,11 +334,17 @@ Header > img {
   cursor: pointer;
 }
 
-.signup-container a {
+.sign-container a {
   margin-top: 20px;
   color: #017580;
   width: 100%;
   text-align: center;
   font-size: 12px;
   text-decoration: none;
+}
+
+.sign-container > span {
+  font-size: 12px;
+  color: red;
+  margin-top: 10px;
 }
